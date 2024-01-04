@@ -1,26 +1,26 @@
-{
-    "backpack": {
+[
+    {
         "id": "item_4_title_link",
         "name": "Sauce Labs Backpack"
     },
-    "bikeLight": {
+    {
         "id": "item_0_title_link",
         "name": "Sauce Labs Bike Light"
     },
-    "boltTshirt": {
+    {
         "id": "item_1_title_link",
         "name": "Sauce Labs Bolt T-Shirt"
     },
-    "fleeceJacket": {
+    {
         "id": "item_5_title_link",
         "name": "Sauce Labs Fleece Jacket"
     },
-    "onesie": {
+    {
         "id": "item_2_title_link",
         "name": "Sauce Labs Onesie"
     },
-    "redTshirt": {
+    {
         "id": "item_3_title_link",
         "name": "Test.allTheThings() T-Shirt (Red)"
     }
-}
+]

@@ -1,7 +1,7 @@
 name: Manual workflow
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -11,6 +11,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - run: ls ${{github.workspace}}
     - name: Install dependencies
       run: npm install
     - name: Run test

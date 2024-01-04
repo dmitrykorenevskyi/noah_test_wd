@@ -1,9 +1,9 @@
 name: Manual workflow
 
 on:
+  push:
   workflow_dispatch:
   
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   run_test:
     # The type of runner that the job will run on
@@ -11,9 +11,11 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - run: cd ..
-    - run: ls ${{github.workspace}}
+    
     - name: Install dependencies
-      run: npm install
+      working-directory: noah_test_wd
+      run: | 
+        ls ${{github.workspace}}
+        npm install 
     - name: Run test
       run: npm run wdio

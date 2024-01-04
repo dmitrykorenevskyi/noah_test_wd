@@ -49,9 +49,17 @@ export const config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        browserName: 'chrome'
-    }],
+    capabilities: [
+        {
+            maxInstances: 5,
+            browserName: 'chrome',
+            acceptInsecureCerts: true,
+            // We need to extends some Chrome flags in order to tell Chrome to run headless
+            'goog:chromeOptions': {
+            args: ['--headless', '--disable-gpu', '--disable-dev-shm-usage'],
+            },
+        },
+    ],
 
     //
     // ===================

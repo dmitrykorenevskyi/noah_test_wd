@@ -9,13 +9,15 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+    env:
+      PROJECT_PATH: ./
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     
+    - run: ls ${{github.workspace}}
     - name: Install dependencies
-      working-directory: noah_test_wd
-      run: | 
-        ls ${{github.workspace}}
-        npm install 
+      working-directory: ${{ github.workspace }}/${{ env.PROJECT_PATH }}
+      run: npm install
     - name: Run test
       run: npm run wdio

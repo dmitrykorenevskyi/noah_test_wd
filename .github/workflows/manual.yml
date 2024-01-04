@@ -12,9 +12,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     
+    - run: ls ${{ github.workspace }}
     - name: Install dependencies
-      run: | 
-        ls 
-        npm install
+      run: npm install
     - name: Run test
       run: npm run wdio

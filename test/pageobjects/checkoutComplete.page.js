@@ -1,8 +1,7 @@
 import { $ } from '@wdio/globals'
-import Page from './page.js';
 import { expect } from '@wdio/globals';
 
-class CheckoutComplete extends Page {
+class CheckoutComplete {
 
     get header () {
         return $('.complete-header');
@@ -10,10 +9,6 @@ class CheckoutComplete extends Page {
     get body () {
         return $('.complete-text');
     }
-
-    async getTextFromTheElement (selector) {
-        return selector.getText();
-    };
 
     async checkThatPurchaseWasSuccessful () {
         const image = await $('img[src="img/pony-express.png"]');

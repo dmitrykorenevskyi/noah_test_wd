@@ -14,10 +14,10 @@ class CartPage {
         const item = await $(`#${itemId}`);
         await expect(item).toBeDisplayed();
     };
-
     async goToCheckout () {
         return this.btnCheckout.click();
     };
+    
 }
 
 export default new CartPage();

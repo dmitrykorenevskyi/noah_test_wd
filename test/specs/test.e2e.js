@@ -1,4 +1,3 @@
-import { expect } from '@wdio/globals';
 import { faker } from '@faker-js/faker';
 
 import CommonHelpers from '../helpers/common.js';
@@ -28,13 +27,11 @@ describe('As a standart logged in user, ', () => {
         await CartPage.goToCheckout();
 
         await CheckoutInfoPage.purchase(faker.person.firstName(), faker.person.lastName(), faker.location.zipCode());
+
+        await CheckoutOverviewPage.checkThatRightItemWereAdded(randomItem.id);
         await CheckoutOverviewPage.finishPurchase();
 
         await CheckoutCompletePage.checkThatPurchaseWasSuccessful();
-
-        // await expect(SecurePage.flashAlert).toBeExisting()
-        // await expect(SecurePage.flashAlert).toHaveTextContaining(
-        //     'You logged into a secure area!')
     });
 
     it('I am abble to purchase all items from the list', async () => {
@@ -49,6 +46,10 @@ describe('As a standart logged in user, ', () => {
         await CartPage.goToCheckout();
 
         await CheckoutInfoPage.purchase(faker.person.firstName(), faker.person.lastName(), faker.location.zipCode());
+
+        for (let i = 0; i < itemsList.length - 1; i++) {
+            await CheckoutOverviewPage.checkThatRightItemWereAdded(itemsList[i].id);
+        };
         await CheckoutOverviewPage.finishPurchase();
 
         await CheckoutCompletePage.checkThatPurchaseWasSuccessful();

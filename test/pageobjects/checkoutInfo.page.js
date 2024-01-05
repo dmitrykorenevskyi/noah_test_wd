@@ -1,8 +1,7 @@
 import { $ } from '@wdio/globals'
-import Page from './page.js';
 import { expect } from '@wdio/globals';
 
-class CheckoutInfo extends Page {
+class CheckoutInfo {
 
     get inputFirstName () {
         return $('#first-name');
@@ -24,11 +23,11 @@ class CheckoutInfo extends Page {
 
         await this.btnContinue.click();
     };
-
     async checkThatRightItemWereAdded (id) {
         const item = await $('#item_4_title_link');
         await expect(item).toBeDisplayed();
-    }
+    };
+    
 }
 
 export default new CheckoutInfo();

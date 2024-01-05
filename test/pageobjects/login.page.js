@@ -1,7 +1,6 @@
 import { $ } from '@wdio/globals';
-import Page from './page.js';
 
-class LoginPage extends Page {
+class LoginPage {
     get inputUsername () {
         return $('#user-name');
     };
@@ -17,9 +16,8 @@ class LoginPage extends Page {
         await this.inputPassword.setValue(password);
         await this.btnSubmit.click();
     };
-
-    open () {
-        return super.open('index.html');
+    async open () {
+        return browser.url(`https://www.saucedemo.com/v1/index.html`);
     };
 }
 

@@ -1,9 +1,7 @@
 import { $ } from '@wdio/globals'
-import Page from './page.js';
-import { expect } from '@wdio/globals';
-import items from '../test-data/items.json' assert { type: "json" };
 
-class ProductsPage extends Page {
+class ProductsPage {
+
     get cartBadge () {
         return $('.shopping_cart_badge');
     };
@@ -16,14 +14,14 @@ class ProductsPage extends Page {
         const selector = $(await this.getItemSelector(itemId));
         await selector.click();
     };
+    async goToTheCart () {
+        return this.cartBadge.click();
+    };
 
     async checkCounter () {
         return this.cartBadge.getText();
     };
 
-    async goToTheCart () {
-        return this.cartBadge.click();
-    };
 }
 
 export default new ProductsPage();

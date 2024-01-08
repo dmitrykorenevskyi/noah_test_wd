@@ -13,7 +13,7 @@
     "wdio-wait-for": "^3.0.10"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js",
-    "wdio_headless": "wdio run ./wdio_headless.conf.js"
+    "wdio": "wdio run ./wdio.conf.js --parallel=2",
+    "wdio_headless": "wdio run ./wdio_headless.conf.js --parallel=2"
   }
 }

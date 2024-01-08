@@ -5,7 +5,7 @@ JS project for E2E test automation of the demo online shop.
 ## Concepts Included
 
 * Common web page interaction methods
-* Parallel test execution ///TODO
+* Parallel test execution
 * Test data generation
 * Page Object pattern
 

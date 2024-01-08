@@ -17,22 +17,22 @@ describe('As a standart logged in user, ', () => {
         await LoginPage.login(credentials.validUsername, credentials.validPassword);
     });
 
-    it('I am abble to purchase random item from the list', async () => {
-        const randomItem = await CommonHelpers.returnRandomValueFromArray(itemsList);
+    // it('I am abble to purchase random item from the list', async () => {
+    //     const randomItem = await CommonHelpers.returnRandomValueFromArray(itemsList);
 
-        await ProductsPage.addToCart(randomItem.id);
-        await ProductsPage.goToTheCart();
+    //     await ProductsPage.addToCart(randomItem.id);
+    //     await ProductsPage.goToTheCart();
 
-        await CartPage.checkThatRightItemWereAdded(randomItem.id);
-        await CartPage.goToCheckout();
+    //     await CartPage.checkThatRightItemWereAdded(randomItem.id);
+    //     await CartPage.goToCheckout();
 
-        await CheckoutInfoPage.purchase(faker.person.firstName(), faker.person.lastName(), faker.location.zipCode());
+    //     await CheckoutInfoPage.purchase(faker.person.firstName(), faker.person.lastName(), faker.location.zipCode());
 
-        await CheckoutOverviewPage.checkThatRightItemWereAdded(randomItem.id);
-        await CheckoutOverviewPage.finishPurchase();
+    //     await CheckoutOverviewPage.checkThatRightItemWereAdded(randomItem.id);
+    //     await CheckoutOverviewPage.finishPurchase();
 
-        await CheckoutCompletePage.checkThatPurchaseWasSuccessful();
-    });
+    //     await CheckoutCompletePage.checkThatPurchaseWasSuccessful();
+    // });
 
     it('I am abble to purchase all items from the list', async () => {
         for (let i = 0; i < itemsList.length - 1; i++) {

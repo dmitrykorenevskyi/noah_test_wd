@@ -33,26 +33,5 @@ describe('As a standart logged in user, ', () => {
 
         await CheckoutCompletePage.checkThatPurchaseWasSuccessful();
     });
-
-    // it('I am abble to purchase all items from the list', async () => {
-    //     for (let i = 0; i < itemsList.length - 1; i++) {
-    //         await ProductsPage.addToCart(itemsList[i].id);
-    //     };
-    //     await ProductsPage.goToTheCart();
-
-    //     for (let i = 0; i < itemsList.length - 1; i++) {
-    //         await CartPage.checkThatRightItemWereAdded(itemsList[i].id);
-    //     }
-    //     await CartPage.goToCheckout();
-
-    //     await CheckoutInfoPage.purchase(faker.person.firstName(), faker.person.lastName(), faker.location.zipCode());
-
-    //     for (let i = 0; i < itemsList.length - 1; i++) {
-    //         await CheckoutOverviewPage.checkThatRightItemWereAdded(itemsList[i].id);
-    //     };
-    //     await CheckoutOverviewPage.finishPurchase();
-
-    //     await CheckoutCompletePage.checkThatPurchaseWasSuccessful();
-    // });
 });
 
